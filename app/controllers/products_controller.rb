@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(name: "pencil sharpener", price: 6, description: "long-point")
+    @product = Product.new(name: params[:input_name], price: params[:input_price], description: params[:input_description])
     @product.save
     render template: "products/show"
   end
